@@ -1,10 +1,11 @@
-; Filename: execve-stack.nasm
-; Author:  Vivek Ramachandran
+; Filename: bind_shell.nasm
+; Author:  Rob W
 ; Website:  http://securitytube.net
 ; Training: http://securitytube-training.com 
 ;
 ;
-; Purpose: 
+; Purpose: Bind shell written in Linux x86 Assembly. The default listening port is 4444. Use the port configurator to choose a different listening port.
+; You are free to use and redistribute this code as you wish.
 
 global _start			
 

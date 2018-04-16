@@ -1,3 +1,7 @@
+#!/usr/bin/python
+
+#You are free to use and redistribute this code as you wish
+
 import sys
 
 port = int(sys.argv[1])
