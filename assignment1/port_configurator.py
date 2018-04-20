@@ -8,6 +8,8 @@ port = int(sys.argv[1])
 
 hex_port = (str(hex(port)).split('x')[1])
 
+print "Hex value of port: " + hex_port
+
 second_half = "\\x" + hex_port[2:4]
 first_half = "\\x" + hex_port[:2]
 
