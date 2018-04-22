@@ -5,6 +5,7 @@
 ;
 ;
 ; Purpose: Egghunter using Matt Miller's sigaction method
+; You are free to use and redistribue this code as you wish
 
 global _start			
 
