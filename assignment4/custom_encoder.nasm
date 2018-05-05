@@ -3,6 +3,7 @@
 ; Website:  http://securitytube.net
 ; Training: http://securitytube-training.com 
 ;
+;
 ;You are free to use and redistribute this code as you wish
 ;
 ; Purpose: Custom encoder that makes use of addition and xor
